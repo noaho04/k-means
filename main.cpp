@@ -140,6 +140,12 @@ int main() {
             }
         }
 
+        BeginDrawing();
+        ClearBackground(GetColor(0x181818FF));
+
+        DrawText(TextFormat("Clusters: %d", cluster_count), 30, 30, 30, RAYWHITE);
+        DrawText(TextFormat("Points:   %d", points.size()), 30, 60, 30, RAYWHITE);
+
         if (!points.empty()) {
             for (int i = 0; i < clusters.size(); i++) {
                 for (const auto& point : clusters[i]) {
@@ -147,12 +153,6 @@ int main() {
                 }
             }
         }
-
-        BeginDrawing();
-        ClearBackground(GetColor(0x181818FF));
-
-        DrawText(TextFormat("Clusters: %d", cluster_count), 30, 30, 30, RAYWHITE);
-        DrawText(TextFormat("Points:   %d", points.size()), 30, 60, 30, RAYWHITE);
 
         EndDrawing();
     }
